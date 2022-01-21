@@ -12,9 +12,11 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
+    "@babel/core": "^7.16.10",
     "@babel/node": "^7.16.8",
-    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": "https://github.com/KimSH39/2022_Backend_Study_2.git",
+  "author": "KSH <sooooooohyeon5@naver.com>"
 }
