@@ -4,12 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/index.js"
+    "dev": "nodemon --exec babel-node src/app.js"
   },
   "dependencies": {
     "body-parser": "^1.19.1",
     "express": "^4.17.2",
-    "react": "^17.0.2"
+    "morgan": "^1.10.0",
+    "react": "^17.0.2",
+    "sequelize": "^6.15.0",
+    "sequelize-cli": "^6.4.1",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.16.10",
