@@ -1,31 +1,32 @@
-const Sequelize = require('sequelize')
+import { DataTypes, Model } from 'sequelize'
 
-module.exports = class Post extends Sequelize.Model {
+class Post extends Model {
   static init(sequelize) {
     return super.init(
       {
-        content: {
-          type: Sequelize.STRING(1000),
-          allowNull: false,
+        id: {
+          type: DataTypes.INTEGER,
+          autoIncrement: true,
+          primaryKey: true,
         },
-        writer: {
-          type: Sequelize.STRING(20),
-          allowNull: true,
+        content: {
+          type: DataTypes.STRING,
+          allowNull: false,
         },
       },
       {
         sequelize,
-        timestamps: false,
-        modelName: 'Post',
-        tableName: 'posts',
-        paranoid: false,
-        charset: 'utf8mb4',
-        collate: 'utf8mb4_general_ci',
+        modelName: 'post',
+        timestamps: true,
+        createdAt: true,
+        updatedAt: true,
       },
     )
   }
 
-  static associate(db) {
-    db.Post.belongsTo(db.User, { foreignKey: 'commenter', targetKey: 'id' })
+  static associate(models) {
+    models.Post.belongsTo(models.User, { foreignKey: 'writer' })
   }
 }
+
+export default Post

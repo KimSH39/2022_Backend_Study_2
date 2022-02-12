@@ -1,6 +1,6 @@
-const Sequelize = require('sequelize')
-const User = require('./user')
-const Post = require('./post')
+import { Sequelize } from 'sequelize'
+import User from './user'
+import Post from './post'
 
 const env = process.env.NODE_ENV || 'development'
 const config = require(__dirname + '/../config/config.json')[env]
